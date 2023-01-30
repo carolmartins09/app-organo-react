@@ -3,12 +3,12 @@ import './time.css'
 
 const Time = ({time, colaboradores, aoDeletar}) => {
     return (
-        (colaboradores.length > 0) && <section className='time' style={{backgroundColor: time.corSecundaria}}>
-            <h3 style={{ borderColor: time.corPrimaria }}>{time.nome}</h3>
+        (colaboradores.length > 0) && <section className='time' style={{backgroundImage: 'url(/imagens/fundo.png)', backgroundColor: time.corPrimaria}}>
+            <h3 style={{ borderColor: time.corSecundaria }}>{time.nome}</h3>
             <div className='colaboradores'>
                 {colaboradores.map((colaborador, indice) => {
                     return <Colaborador 
-                        corDeFundo = {time.corPrimaria}
+                        corDeFundo = {time.corSecundaria}
                         key = {indice}
                         colaborador = {colaborador}
                         aoDeletar = {aoDeletar}
