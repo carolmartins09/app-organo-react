@@ -1,10 +1,10 @@
-import './Formulario.css'
+import './formulario.css'
 import CampoTexto from '../CampoTexto'
 import ListaSuspensa from '../ListaSuspensa'
 import Botao from '../Botao'
 import { useState } from 'react'
 
-const Formulario = (props) => {
+const Formulario = ({aoCadastrar, times}) => {
 
     const [nome, setNome] = useState('');
     const [cargo, setCargo] = useState('');
@@ -13,7 +13,7 @@ const Formulario = (props) => {
 
     const aoSalvar = (evento) => {
         evento.preventDefault()
-        props.aoColaboradorCadastrado({
+        aoCadastrar({
             nome,
             cargo,
             imagem,
@@ -52,7 +52,7 @@ const Formulario = (props) => {
                 <ListaSuspensa 
                     obrigatorio = {true} 
                     label="Time" 
-                    itens = {props.times}
+                    itens = {times}
                     valor={time}
                     aoAlterado={valor => setTime(valor)}
                 />
